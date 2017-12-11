@@ -33,4 +33,29 @@ public class Enemy extends LivingThing {
             System.out.printf("モンスター%sは倒れた。\n", na);
         }
     }
+
+    public void attack(LivingThing opponent){
+        int damage = (int)(Math.random() * getAttack());
+
+        if(getDead()){
+            damage = 0;
+        }
+        if(!getDead()) {
+            if(damage == 0){
+                System.out.printf("%sの攻撃！,,,だが、%sは攻撃を回避した！\n", getName(), opponent.getName());
+            }
+            else {
+                double lucky = Math.random();
+                if (lucky <0.3){
+                    damage = damage*2;
+                    System.out.printf("%sの攻撃！痛恨の一撃！！%sに%dのダメージを与えた！！\n", getName(), opponent.getName(), damage);
+                }
+                else{
+                    System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", getName(), opponent.getName(), damage);
+                }
+            }
+        }
+        opponent.wounded(damage);
+    }
+
 }

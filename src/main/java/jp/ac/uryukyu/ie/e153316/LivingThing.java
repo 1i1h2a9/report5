@@ -61,6 +61,9 @@ public class LivingThing {
         this.dead = dead;
     }
 
+    public int getAttack() { return attack; }
+
+
     /**
      * Heroへ攻撃するメソッド。
      * attackに応じて乱数でダメージを算出し、hero.wounded()によりダメージ処理を実行。
