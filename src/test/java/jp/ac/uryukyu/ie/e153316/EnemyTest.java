@@ -1,16 +1,14 @@
 package jp.ac.uryukyu.ie.e153316;
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
-
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class EnemyTest {
     /**
      * 「死んでる状態では攻撃できない」ことを確認。
      */
     @Test
-    public void attack() {
+    public void testattack() {
         int heroHP = 10;
         Hero hero = new Hero("テスト勇者", heroHP, 5);
         Enemy enemy = new Enemy("テストスライム", 6, 3);
